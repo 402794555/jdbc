@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c3p0-config>
+    <!--C3P0的缺省（默认）配置，
+      若代码中是   ComboPooledDataSource ds=new ComboPooledDataSource();表示使用的默认配置
+      ComboPooledDataSource 组合池数据源
+      -->
+
+
+    <!-- 使用默认的配置读取连接池对象 -->
+    <default-config>
+        <!--  连接参数 -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/jdbcstudy?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+
+        <!-- 连接池参数 -->
+        <!-- 链接用完后自动增量3个 -->
+        <property name="acquireIncrement">5</property>
+        <!--初始化的申请的连接数量-->
+        <property name="initialPoolSize">10</property>
+        <!--最小的连接数量-->
+        <property name="minPoolSize">5</property>
+        <!--最大的连接数量-->
+        <property name="maxPoolSize">20</property>
+        <!--连接超时时间-->
+        <property name="checkoutTimeout">3000</property>
+    </default-config>
+
+
+
+    <named-config name="MySQL">
+        <!--C3P0的缺省（默认）配置，
+      若代码中是   ComboPooledDataSource ds=new ComboPooledDataSource("MySQL");
+      表示使用的是name为"MySQL"的配置-->
+
+
+        <!--  连接参数 -->
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/jdbcstudy?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=true</property>
+        <property name="user">root</property>
+        <property name="password">123456</property>
+
+        <!-- 连接池参数 -->
+        <!-- 链接用完后自动增量3个 -->
+        <property name="acquireIncrement">5</property>
+        <!--初始化的申请的连接数量-->
+        <property name="initialPoolSize">10</property>
+        <!--最小的连接数量-->
+        <property name="minPoolSize">5</property>
+        <!--最大的连接数量-->
+        <property name="maxPoolSize">20</property>
+        <!--连接超时时间-->
+        <property name="checkoutTimeout">3000</property>
+    </named-config>
+</c3p0-config>
